@@ -4,20 +4,18 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Arqmedica</a></h1>
+            <h1><a href="/">Arqmedica</a></h1>    
         </div>
 
+       
+        {% for post in posts %}
         <div>
-            <p>published: 26.04.2021, 12:18</p>
-            <h2><a href="">My first post<a></h2>
-            <p>Aenaea eu leo quam. </p>
-        </div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
 
-        <div>
-            <p>公開日：2021/12/19</p>
-            <h2><a href="">2番目の投稿<a></h2>
-            <p>Hello world. </p>
         </div>
+        {% endfor %}
 
     </body>
 </html>
